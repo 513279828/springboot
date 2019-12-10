@@ -1,0 +1,10 @@
+#数据库连接
+spring:
+datasource:
+driver-class-name:com.mysql.cj.jdbc.Driver
+url:jdbc:mysql://39.105.189.141:3307/db_carsys1908?serverTimezone=UTC
+username:root
+password:qfjava
+type:com.alibaba.druid.pool.DruidDataSource
+mybatis:
+mapper-locations:classpath*:/mapper/*.xml

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qfedu.user.dao.MemberFavMapper">
+  <resultMap id="BaseResultMap" type="com.qfedu.user.entity.MemberFav">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="member_id" jdbcType="BIGINT" property="memberId" />
+    <result column="fav_type" jdbcType="TINYINT" property="favType" />
+    <result column="content_id" jdbcType="BIGINT" property="contentId" />
+    <result column="fav_time" jdbcType="INTEGER" property="favTime" />
+    <result column="fav_ip" jdbcType="VARCHAR" property="favIp" />
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    id, member_id, fav_type, content_id, fav_time, fav_ip
+  </sql>
+
+  <insert id="insert" parameterType="com.qfedu.user.entity.MemberFav">
+    insert into member_fav (id, member_id, fav_type, 
+      content_id, fav_time, fav_ip
+      )
+    values (#{id,jdbcType=BIGINT}, #{memberId,jdbcType=BIGINT}, #{favType,jdbcType=TINYINT}, 
+      #{contentId,jdbcType=BIGINT}, #{favTime,jdbcType=INTEGER}, #{favIp,jdbcType=VARCHAR}
+      )
+  </insert>
+
+</mapper>
