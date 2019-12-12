@@ -8,7 +8,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 // 开关类
 @SpringBootApplication// 标记 这是SpringBoot项目
 @EnableSwagger2 // 启动Swagger的扫描
-@MapperScan("com.qfedu.user.dao")
+@MapperScan("com.qfedu.user.dao,com.qfedu.oss.dao")
 public class SpringprojectApplication {
 
     public static void main(String[] args) {
