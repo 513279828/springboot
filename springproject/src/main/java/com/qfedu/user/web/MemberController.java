@@ -38,7 +38,7 @@ public class MemberController {
     }
 
     @ApiOperation(value = "查询全部内容分页",notes = "查询全部内容分页")
-    @PostMapping("/api/user/member/checkName.do")
+    @PostMapping("/api/user/member/page.do")
     public R page(@RequestBody MemberQueryDto queryDto){
         return memberService.search(queryDto);
     }

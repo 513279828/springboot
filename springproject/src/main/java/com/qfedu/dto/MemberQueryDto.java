@@ -10,3 +10,4 @@ public class MemberQueryDto {
     private String name;
     private int sex;
 }
+

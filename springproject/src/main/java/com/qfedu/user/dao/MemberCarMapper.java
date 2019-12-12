@@ -10,7 +10,7 @@ import java.util.List;
 public interface MemberCarMapper {
     int insert(MemberCar record);
 
-    int insertSelective(MemberCar record);
+    /*int insertSelective(MemberCar record);
 
-    List<MemberCar> selectByExample(MemberCarExample example);
+    List<MemberCar> selectByExample(MemberCarExample example);*/
 }

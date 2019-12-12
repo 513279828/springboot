@@ -9,6 +9,11 @@ public class Member {
 
     private Byte source;
 
+    public Member() {
+    }
+
+
+
     public Long getId() {
         return id;
     }
