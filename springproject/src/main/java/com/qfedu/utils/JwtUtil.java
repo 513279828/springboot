@@ -7,9 +7,9 @@ import io.jsonwebtoken.SignatureAlgorithm;
 
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
-import java.security.Security;
 import java.util.Date;
 
+// 生成和解析token
 public class JwtUtil {
     // 生成
     public static String createJWT(String id, int minutes, String content) {
@@ -51,6 +51,7 @@ public class JwtUtil {
 
     }
 
+    // 创建
     private static SecretKey createKey() {
         byte[] keys = "yardtoken".getBytes();
         SecretKey key = new SecretKeySpec(keys, 0, keys.length, "AES");

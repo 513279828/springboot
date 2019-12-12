@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+
+// 文件上传的工具类
 public class AliOssUtil {
     //Endpoint以杭州为例， 其他Region请按实际情况填写
     private static String endpoint = "http://oss-cn-beijing.aliyuncs.com";

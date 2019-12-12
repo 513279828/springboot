@@ -11,6 +11,9 @@ import java.util.Random;
  * @author: Feri
  * @create: 2019-12-09 16:51
  */
+
+
+// 随机类
 public class RandomUtil {
 
     /**
@@ -51,8 +54,11 @@ public class RandomUtil {
         return -1;
     }
     /**
-     * 随机生成指定格式的数字
-     * @param len 随机数字的个数*/
+     * 随机生成指定格式的数字 随机生成指定个数的验证码
+     *
+     * 此方法在SmsServiceImpl的实现类中调用
+     * @param len 随机数字的个数
+     */
     public static int createNum(int len){
         Random random=new Random();
         //4  1000-9999   0-8999 +1000
@@ -61,6 +67,7 @@ public class RandomUtil {
         int max=(int)(Math.pow(10,len)-Math.pow(10,len-1));
         return random.nextInt(max)+(int)Math.pow(10,len-1);
     }
+
     public static void main(String[] args) {
         System.out.println(createGroup(5,60));
     }

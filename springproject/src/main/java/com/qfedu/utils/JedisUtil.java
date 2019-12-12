@@ -8,10 +8,33 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+// Jedis工具类
+
+/*
+Jedis的作用：
+    解决应用服务器的cpu和内存压力
+
+    减少io的读操作，减轻io的压力
+
+    关系型数据库的扩展性不强，难以改变表结构
+ */
+
+/*
+    nosql数据库没有关联关系，数据结构简单，拓展表比较容易
+
+    nosql读取速度快，对较大数据处理快
+ */
+
+/*
+    Redis是一个开源的key—value型数据库，支持string、list、set、zset和hash类型数据。
+    对这些数据的操作都是原子性的，redus为了保证效率会定期持久化数据。
+ */
 public class JedisUtil {
     private static JedisPool jedisPool;
 
     private Jedis jedis;
+
+    // 配置连接池
     static {
         JedisPoolConfig poolConfig = new JedisPoolConfig();
         poolConfig.setMaxIdle(20); // 最大空闲客户端连接对象
@@ -19,6 +42,7 @@ public class JedisUtil {
         poolConfig.setMaxWaitMillis(2000); //最多等待时间 毫秒
         jedisPool = new JedisPool(poolConfig, "39.105.189.141", 6380);
     }
+
 
     public JedisUtil() {
         jedis = jedisPool.getResource();
@@ -31,11 +55,11 @@ public class JedisUtil {
     }
 
     public void addStr(String key, String val, int seconds) {
-        jedis.psetex(key,seconds*1000, val);
+        jedis.psetex(key, seconds * 1000, val);
     }
 
     // 新增 list集合
-    public void addList(String key, String...arr) {
+    public void addList(String key, String... arr) {
         jedis.lpush(key, arr); // 添加到头部
 
         //从尾部添加
@@ -43,7 +67,7 @@ public class JedisUtil {
     }
 
     // 新增 Set集合
-    public void addSet(String key, String...arr) {
+    public void addSet(String key, String... arr) {
         jedis.sadd(key, arr);
     }
 

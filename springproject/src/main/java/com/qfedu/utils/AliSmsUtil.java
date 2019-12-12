@@ -10,6 +10,8 @@ import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.profile.DefaultProfile;
 
+
+// 发送短信验证码的工具类
 public class AliSmsUtil {
 
     /**
